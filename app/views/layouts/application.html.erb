@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-switch@3.3.4/dist/css/bootstrap3/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-switch@3.3.4/dist/js/bootstrap-switch.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Merchant Dashboard</a>
+        </div>
+        <% if (session[:user_id]) %> 
+        <ul class="nav navbar-nav">
+          <li class="<%= controller_name == 'orders' ? 'active' : '' %>">
+            <a href="/orders">Orders</a>
+          </li>
+          <li class="<%= controller_name == 'settings' ? 'active' : '' %>">
+            <a href="/settings">Settings</a>
+          </li>
+        </ul>
+        <a href="/logout" class="btn btn-primary pull-right" style="margin-top: 5px;">Log out</a>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% if(flash[:notice]) %>
+      <div class="alert alert-success">
+        <strong>Success!</strong> <span><%= flash[:notice] %></span>
+      </div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

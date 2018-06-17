@@ -1,0 +1,25 @@
+en:
+  hello: "Hello world"
+  welcome: "Hello %{first_name}"
+  type_keyword: "Please type keyword"
+  type_book_id: "Please type id (Goodreads id)"
+  searching_for: "Searching for %{type}: %{query}"
+  please_wait: "Please wait.."
+  please_select_book: "Please select book:"
+  enter_valid_id: "Please enter valid book it (Goodreads id)"
+  no_results: "No results, please try again"
+  getting_book: "Getting book information"
+  positive_analysis: "Based on reviews of this book, we recommend you to buy it!"
+  negative_analysis: "Based on reviews of this book, we don't recommend you to buy it!"
+  analysis_failed: "Sorry! we couldn't analyize reviews"
+  
+  # questions
+  search_by_question: "How would you like to seach for a book?"
+  confirm_keyword_question: "Are you sure? you would like to seach for %{keyword}?"
+  
+  # answers
+  search_by_keyword: "search by keyword"
+  search_by_id: "search by id"
+
+  _yes: "yes"
+  _no: "no"
